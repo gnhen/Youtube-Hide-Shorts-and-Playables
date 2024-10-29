@@ -9,7 +9,7 @@ This is a custom script for the Tweaks for Youtube browser extension.
 - Compatible with multiple browsers.
 
 ## Installation
-1. Open the website at (insert)
+1. Open the <a href="https://gnhen.github.io/Youtube-Hide-Shorts-and-Playables/">website.</a>
 2. **Copy the JavaScript code** provided in the application.
 3. **Paste the code** into your browser's custom JavaScript section.
 
