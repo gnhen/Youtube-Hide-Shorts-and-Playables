@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Tweaks for YouTube</title>
+</head>
+
+<body>
+    <section class="intro">
+        <h1>Hide Shorts and Playables using Tweaks for YouTube</h1>
+        <p>Copy the JavaScript code and paste it into your custom JS Section</p>
+
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode()">Copy</button>
+            <pre class="copyable" id="jsCode">
+setInterval(() => {
+    document.querySelectorAll('ytd-rich-section-renderer').forEach((section) => {
+        const title = section.querySelector('span#title');
+        if (title && (title.innerText.includes("Shorts") || title.innerText.includes("Playables"))) {
+            section.style.display = 'none';
+        }
+    });
+}, 1000);
+            </pre>
+        </div>
+    </section>
+
+    <section class="addons">
+        <h3>Add Tweaks for YouTube to your Browser</h3>
+        <div class="addon-links">
+            <a href="https://chromewebstore.google.com/detail/tweaks-for-youtube/ogkoifddpkoabehfemkolflcjhklmkge"
+                target="_blank">
+                <img src="https://user-images.githubusercontent.com/585534/107280622-91a8ea80-6a26-11eb-8d07-77c548b28665.png"
+                    alt="Chrome Addon">
+            </a>
+            <a href="https://addons.mozilla.org/en-US/firefox/addon/tweaks-for-youtube/" target="_blank">
+                <img src="https://blog.mozilla.org/addons/files/2015/11/get-the-addon.png" alt="Firefox Addon">
+            </a>
+            <a href="https://microsoftedge.microsoft.com/addons/detail/tweaks-for-youtube/nnhifoobfibjmlkejadjmcdckkjbljcp"
+                target="_blank">
+                <img src="https://i.postimg.cc/XYF0rQzw/edge-gettheaddon.png" alt="Edge Addon">
+            </a>
+        </div>
+    </section>
+
+    <script>
+        function copyCode() {
+            const codeText = document.getElementById("jsCode").innerText;
+            navigator.clipboard.writeText(codeText).then(() => {
+                alert("Code copied to clipboard!");
+            }).catch(() => {
+                alert("Failed to copy code.");
+            });
+        }
+    </script>
+</body>
+
+</html>
