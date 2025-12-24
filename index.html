@@ -11,19 +11,26 @@
 <body>
     <section class="intro">
         <h1>Hide Shorts and Playables using Tweaks for YouTube</h1>
-        <p>Copy the JavaScript code and paste it into your custom JS Section</p>
+        <p>Copy the CSS code and paste it into your custom CSS Section</p>
 
         <div class="code-container">
             <button class="copy-btn" onclick="copyCode()">Copy</button>
             <pre class="copyable" id="jsCode">
-setInterval(() => {
-    document.querySelectorAll('ytd-rich-section-renderer').forEach((section) => {
-        const title = section.querySelector('span#title');
-        if (title && (title.innerText.includes("Shorts") || title.innerText.includes("Playables"))) {
-            section.style.display = 'none';
-        }
-    });
-}, 1000);
+ytd-guide-entry-renderer:has(a[title="Shorts"]),
+ytd-mini-guide-entry-renderer:has(a[title="Shorts"]),
+ytd-guide-entry-renderer:has(a[href^="/shorts"]),
+ytd-mini-guide-entry-renderer:has(a[href^="/shorts"]),
+grid-shelf-view-model:has(a[href^="/shorts"]),
+ytd-reel-shelf-renderer,
+ytd-secondary-search-container-renderer:has(a[href^="/shorts"]),
+ytd-rich-section-renderer:has(a[href^="/shorts"]),
+ytd-rich-section-renderer:has(ytd-rich-shelf-renderer[is-shorts]),
+ytd-rich-shelf-renderer:has(a[href*="/playables"]),
+ytd-rich-section-renderer:has(a[href*="/playables"]),
+ytd-guide-entry-renderer:has(a[href*="/playables"]),
+ytd-mini-guide-entry-renderer:has(a[href*="/playables"]) {
+    display: none !important;
+}
             </pre>
         </div>
     </section>
