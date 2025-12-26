@@ -5,7 +5,7 @@ This is a custom script for the Tweaks for Youtube browser extension.
 
 ## Features
 - Hides YouTube Shorts and Playables sections.
-- Easy to use: Just copy the CSS code and paste it into your browser's custom JavaScript section.
+- Easy to use: Just copy the CSS code and paste it into your browser's custom CSS section.
 - Compatible with mainstream browsers.
 
 ## Installation
